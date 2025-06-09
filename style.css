@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.header-texts {
+    margin-left: 35vw;
+    border-color: aqua;
+}
+
+
+
+.main-card-container {
+    border: 2px solid red;
+    width: max-content;
+    height: max-content;
+}
