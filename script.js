@@ -20,6 +20,7 @@ const bookList = [];
 
 // When we click the "Add New Book" button.....
 buttonNewBook.addEventListener("click", function() {
+    bookDetailForm.reset(); 
     dialog.showModal();
     closeBtn.addEventListener("click", () => dialog.close())
 })
@@ -45,6 +46,8 @@ bookDetailForm.addEventListener("submit", function(e) {
 
     dialog.close();
 })
+
+
 
 
 
