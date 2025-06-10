@@ -21,5 +21,26 @@
     <div class="main-card-container">
         Asdasdasdasd
     </div>
+
+    <dialog class="dialog">
+        <form class="bookDetailForm">
+            <label for="title">Title: </label>
+            <input type="text" id="title" name="bookTitle" required>
+
+            <label for="author">Author: </label>
+            <input type="text" id="author" name="bookAuthor" required>
+
+            <label for="pages">Pages: </label>
+            <input type="number" id="pages" name="bookPages" min="1" required>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="haveRead" name="bookhaveRead">
+                <label for="haveRead" class="ml-2">Have Read?</label>
+            </div>
+
+            <button type="submit">Add Book</button>
+        </form>
+        <button class="close-dialog-btn">Close</button>
+    </dialog>
 </body>
 </html>
