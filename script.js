@@ -13,6 +13,7 @@ const cardContainer = document.querySelector(".main-card-container");
 const dialog = document.querySelector(".dialog");
 const bookDetailForm = document.querySelector(".bookDetailForm");
 const closeBtn = document.querySelector(".close-dialog-btn");
+const clearLibrary = document.querySelector(".clear-library");
 
 // We first create an empty array to store the books we create 
 const bookList = [];
@@ -22,6 +23,7 @@ function renderBooks() {
     bookList.forEach(book => {
         const bookCard = document.createElement("div");
         bookCard.setAttribute("class", "book-card");
+        bookCard.setAttribute("data-id", book.id)
         
         const titleDiv = document.createElement("div");
         titleDiv.setAttribute("class", "title-div");
@@ -38,18 +40,38 @@ function renderBooks() {
         const haveReadDiv = document.createElement("div");
         haveReadDiv.setAttribute("class", "haveRead-div");
         haveReadDiv.textContent = "Have Read?: "
-        if (haveRead) {
-            haveReadDiv.textContent += "Have Read"
+        if (book.haveRead) {
+            haveReadDiv.textContent += "Have Read";
         } else {
-            haveReadDiv.textContent += "Have NOT Read"
+            haveReadDiv.textContent += "Have NOT Read";
         }
+        
+        const removeBookBtn = document.createElement("button");
+        removeBookBtn.setAttribute("class", "remove-book-btn");
+        removeBookBtn.textContent = "Remove Book";
+
+        const toggleReadBtn = document.createElement("button");
+        toggleReadBtn.setAttribute("class", "toggle-read-btn");
+        toggleReadBtn.textContent = "Toggle Read Status";
 
         bookCard.appendChild(titleDiv);
         bookCard.appendChild(authorDiv);
         bookCard.appendChild(pagesDiv);
         bookCard.appendChild(haveReadDiv);
+        bookCard.appendChild(removeBookBtn);
+        bookCard.appendChild(toggleReadBtn);
 
         cardContainer.appendChild(bookCard);
+
+        removeBookBtn.addEventListener("click", function() {
+            cardContainer.removeChild(bookCard);
+            bookList.splice(bookList[book], 1);
+        })
+
+        toggleReadBtn.addEventListener("click", function() {
+            toggleReadStatus(book.id);
+            renderBooks();
+        })
     })
 }
 
@@ -84,9 +106,22 @@ bookDetailForm.addEventListener("submit", function(e) {
     dialog.close();
 })
 
+// Function to toggle read status
+function toggleReadStatus(bookId) {
+    const book = bookList.find(b => b.id === bookId);
+    if (book) {
+        book.haveRead = !book.haveRead;
+    }
+}
 
+clearLibrary.addEventListener("click", function() {
+    function removeAllChildrenWhileLoop(parentElement) {
+        while (parentElement.firstChild) {
+            parentElement.removeChild(parentElement.firstChild);
+        }
+    }
 
+    removeAllChildrenWhileLoop(cardContainer);
 
-
-
-
+    bookList.splice(0, (bookList.length));
+}); 
