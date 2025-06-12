@@ -136,6 +136,12 @@ body {
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
+button:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgb(203, 133, 243);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
 
 .book-card > button {
     width: 100%;
@@ -145,12 +151,9 @@ body {
     border: none;
 }
 
-button:hover {
-    cursor: pointer;
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 16px rgb(203, 133, 243);
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
-}
+
+
+
 
 .book-card div {
     font-weight: bold;
