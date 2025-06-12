@@ -1,16 +1,107 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .header-texts {
     margin-left: 35vw;
-    border-color: aqua;
+    margin-top: 1rem;
+    padding: 2px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    border: 1px solid red;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    margin-left: -5vw;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.button-container>*,
+.form-end-button>* {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: rgb(219, 219, 182);
+}
+
+.dialog {
+       /* Your existing styles */
+       border: none;
+       border-radius: 12px;
+       padding: 30px;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+       height: 40vh;
+       width: 20vw;
+   
+       /* --- Styles to center the dialog box --- */
+       position: fixed;        /* Ensures it's positioned relative to the viewport */
+       top: 50%;               /* Moves the top edge to the vertical center of the viewport */
+       left: 50%;              /* Moves the left edge to the horizontal center of the viewport */
+       transform: translate(-50%, -50%); /* Shifts the dialog back by half of its own width and height */
+       margin: 0; 
+}
+
+.bookDetailForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.title-container,
+.author-container,
+.pages-container,
+.checkbox-container {
+    display: flex;
+    align-items: center;
 }
 
 
+.bookDetailForm input {
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    padding: 1rem;
+}
+
+.title-container {
+    gap: 3.5rem
+}
+
+.author-container {
+    gap: 2rem;
+}
+
+.pages-container {
+    gap: 2.85rem;
+}
+
+.checkbox-container {
+    gap: 1rem;
+}
+
+
+.checkbox-container input {
+    height: 1rem;
+    width: 1rem;
+    border: 2px solid rgb(219, 219, 182);
+}
 
 .main-card-container {
-    border: 2px solid red;
-    width: 20rem;
-    height: 20rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex: auto;
 }
+
