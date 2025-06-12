@@ -39,7 +39,7 @@ function renderBooks() {
 
         const haveReadDiv = document.createElement("div");
         haveReadDiv.setAttribute("class", "haveRead-div");
-        haveReadDiv.textContent = "Have Read?: "
+        haveReadDiv.textContent = "Status: "
         if (book.haveRead) {
             haveReadDiv.textContent += "Have Read";
         } else {
