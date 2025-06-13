@@ -121,6 +121,10 @@ clearLibrary.addEventListener("click", function() {
         }
     }
 
+    if (bookList.length === 0) {
+        alert("Library is empty!")
+    }
+
     removeAllChildrenWhileLoop(cardContainer);
 
     bookList.splice(0, (bookList.length));
